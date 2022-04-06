@@ -1,0 +1,54 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 --Deliverable 2\
+--Retrieve the emp_no, first_name, last_name, and birth_date columns from the Employees table.\
+SELECT\
+employees.emp_no,\
+employees.first_name,\
+employees.last_name,\
+employees.birth_date\
+FROM employees;\
+\
+--Retrieve the from_date and to_date columns from the Department Employee table.\
+SELECT\
+dept_emp.from_date,\
+dept_emp.to_date\
+FROM dept_emp;\
+\
+--Retrieve the title column from the Titles table.\
+SELECT\
+titles.title\
+FROM titles;\
+\
+--Use a DISTINCT ON statement to retrieve the first occurrence of the employee number \
+--for each set of rows defined by the ON () clause.\
+SELECT DISTINCT ON (employees.emp_no)\
+	employees.emp_no,\
+	employees.first_name,\
+	employees.last_name,\
+	employees.birth_date,\
+	dept_emp.from_date,\
+	dept_emp.to_date,\
+	titles.title\
+--Create a new table using the INTO clause.\
+INTO mentorship_eligibilty\
+FROM employees\
+--Join the Employees and the Department Employee tables on the primary key.\
+INNER JOIN dept_emp ON employees.emp_no = dept_emp.emp_no\
+--Join the Employees and the Titles tables on the primary key.\
+INNER JOIN titles ON employees.emp_no = titles.emp_no\
+--Filter the data on the to_date column to all the current employees, \
+--then filter the data on the birth_date columns to get all the employees \
+--whose birth dates are between January 1, 1965 and December 31, 1965.\
+WHERE employees.birth_date BETWEEN '1965-01-01' AND '1965-12-31'\
+--Order the table by the employee number.\
+ORDER BY employees.emp_no;\
+\
+SELECT * FROM mentorship_eligibilty;\
+\
+}
