@@ -6,7 +6,7 @@ Identifying the retirement status of the existing employees of Pewlett Hackard a
 ## (2) Results                                                                           
 To perform better analysis, I have extracted the data from both deliverable reports into one excel file and added some additional columns to show the data with more views.
 
-![image](https://github.com/sunnycywong/Module-7_-Pewlett-Hackard-Analysis/blob/main/List%20Comparison.png) 
+![image](https://github.com/sunnycywong/Module-7_-Pewlett-Hackard-Analysis/blob/main/Employee_Database_challenge.sql/List%20Comparison.png) 
 
 ### <ins> Retiring Titles <ins>
   
